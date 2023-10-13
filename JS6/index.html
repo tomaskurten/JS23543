@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cambiarTexto(){
+            var x=document.getElementsByClassName("ejemplo")
+            x[3].innerHTML="Hola!";
+        }
+
+        function cambiarTodos(){
+            var x=document.getElementsByClassName("ejemplo")
+            for(i=0;i<x.length;i++){
+                x[i].innerHTML="Hola!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="ejemplo">elemento uno, clase ejemplo</div>
+    <p class="ejemplo">este parrafo no es clase ej</p>
+    <div class="ejemplo">elemento dos, clase ejemplo</div>
+    <div class="ejemplo">elemento dos, clase ejemplo</div>
+    <div class="ejemplo">elemento dos, clase ejemplo</div>
+    <div class="ejemplo">elemento dos, clase ejemplo</div>
+    <div class="ejemplo">elemento dos, clase ejemplo</div>
+
+    <button onclick="cambiarTexto()">Cambio</button>
+    <button onclick="cambiarTodos()">Cambio Todos</button>
+
+</body>
+</html>
