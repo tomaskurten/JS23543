@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CORONAVIRUS</h1>
+    <button onclick="traer()">Datos:</button>
+    <div>Confirmados: <span id="corona"></span></div>
+    <div>Muertes: <span id="muertos"></span></div>
+    <script>
+        coronaCont=document.querySelector('#corona')
+        muertosCont=document.querySelector('#muertos')
+        function traer(){
+            fetch('https://coronavirus.m.pipedream.net/')
+            .then(res=>res.json())
+            .then(data=>{
+                coronaCont.innerHTML=`${data.rawData[7].Confirmed}`
+                muertosCont.innerHTML=`${data.rawData[7].Deaths}`
+            }
+            
+            )
+        }
+
+    </script>
+</body>
+</html>
